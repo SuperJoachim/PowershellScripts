@@ -35,7 +35,7 @@ foreach($LB in $LoadBalancers) {
 
     foreach($LBRuleToRemove in $LBrulesList) {
         Write-Host "Removing rule:" $LBRuleToRemove.Name "source:"$LBRuleToRemove.FrontendPort"target:"$LBRuleToRemove.BackendPort"on loadbalancer:" $LB.Name
-        Remove-AzureRmLoadBalancerInboundNatRuleConfig -Name $LBRuleToRemove.Name -LoadBalancer $LB
+        $null = Remove-AzureRmLoadBalancerInboundNatRuleConfig -Name $LBRuleToRemove.Name -LoadBalancer $LB
         write-host "Rule removed." -ForegroundColor Cyan
     }
 }
