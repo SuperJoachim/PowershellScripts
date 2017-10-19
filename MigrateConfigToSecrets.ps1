@@ -1,7 +1,7 @@
 $ConfigFileToConvert = "Path goes here"
 $VaultName = "Name of your keyvault"
 
-$lines = Get-Content $ConfigFileToConvert | Where {$_.ToString().Contains("<add key")} 
+$lines = Get-Content $ConfigFileToConvert | Where {$_.ToString().Contains("<add key")} 
 
 foreach ($line in $lines) {
     
